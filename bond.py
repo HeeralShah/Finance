@@ -34,8 +34,6 @@ class Bond:
         return self._days_to_maturity
     
     
-
-    
     @dispatch
     def _set_maturity(self, maturity):
         raise NotImplementedError("cannot set maturity for this data type")
@@ -56,13 +54,6 @@ class Bond:
             raise NotImplementedError("format of date strings has not been provided")
         self._maturity_date = dt.strptime(maturity, self.date_string_format).date()
         self._days_to_maturity = (self._maturity_date - dt.now().date()).days
-
-
-
-
-
-
-
 
 
 
